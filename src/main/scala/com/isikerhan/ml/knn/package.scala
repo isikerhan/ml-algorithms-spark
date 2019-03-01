@@ -4,12 +4,10 @@ package com.isikerhan.ml
   * @author Işık Erhan
   */
 package object knn {
-  type Data = (RawData, String)
-  type RawData = Vector[Number]
+  private[knn] type Data = (RawData, String)
+  private[knn] type RawData = Vector[Number]
 
-  implicit val KNNOrdering = new Ordering[(RawData, Double)] {
-    override def compare(x: (RawData, Double), y: (RawData, Double)): Int = {
-      x._2.compareTo(y._2)
-    }
+  implicit val KNNOrdering: Ordering[(RawData, Double)] = (x: (RawData, Double), y: (RawData, Double)) => {
+    x._2 compare y._2
   }
 }
