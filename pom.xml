@@ -10,6 +10,7 @@
     <encoding>UTF-8</encoding>
     <scala.version>2.12.6</scala.version>
     <spark-core.version>2.4.0</spark-core.version>
+    <scallop.version>3.1.5</scallop.version>
   </properties>
 
   <dependencies>
@@ -29,6 +30,13 @@
       <artifactId>spark-core_2.12</artifactId>
       <version>${spark-core.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.rogach/scallop -->
+    <dependency>
+      <groupId>org.rogach</groupId>
+      <artifactId>scallop_2.12</artifactId>
+      <version>${scallop.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>

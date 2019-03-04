@@ -10,4 +10,10 @@ package object knn {
   implicit val KNNOrdering: Ordering[(RawData, Double)] = (x: (RawData, Double), y: (RawData, Double)) => {
     x._2 compare y._2
   }
+
+  private[knn] def dataFromCSV(line: String): Data = {
+    val values = line.split("\\s*\\,\\s*")
+    (values.slice(1, values.size).map(_.toDouble).toVector.asInstanceOf[RawData],
+      String.valueOf(values.apply(0)))
+  }
 }
